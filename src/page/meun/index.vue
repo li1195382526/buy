@@ -77,9 +77,12 @@
 <style scoped lang="less">
 .meun{
     width: 202px;
-    height: 70vh;
+    height: 93vh;
     .tac{
         width: 100%;
+    }
+    .el-menu-vertical-demo{
+        height: 100%;
     }
 }
 </style>

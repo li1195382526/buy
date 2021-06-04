@@ -3,9 +3,7 @@
         <vheader></vheader>
         <div class="box">
             <meun></meun>
-            <div>
-                <router-view/>
-            </div>
+             <router-view/>    
         </div>
     </div>
 </template>
