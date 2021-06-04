@@ -26,11 +26,11 @@
         <el-menu-item index="1-4-1">选项1</el-menu-item>
         </el-submenu>
     </el-submenu>
-    <el-menu-item index="2">
+    <el-menu-item index="2" @click="handleGo">
         <i class="el-icon-menu"></i>
         <span slot="title">客户管理</span>
     </el-menu-item>
-    <el-menu-item index="3" disabled>
+    <el-menu-item index="3">
         <i class="el-icon-document"></i>
         <span slot="title">物料管理</span>
     </el-menu-item>
@@ -59,17 +59,21 @@
     methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
-        this.$router.push({
-                    path: '/user',
-                })
+        if(key==1){
+            this.$router.push({
+                                path: '/user',
+                            })
+        }
+        if(key==2){
+            this.$router.push({path: '/customer'})
+        }
+        
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
       },
       handleGo(){
-          this.$router.push({
-                    path: '/user',
-                })
+          this.$router.push({path: '/customer',})
       }
     }
   }
