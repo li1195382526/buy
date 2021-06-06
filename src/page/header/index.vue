@@ -16,6 +16,7 @@ export default {
 .header{
     height: 50px;
     line-height: 50px;
+    background: url(../../assets/bg1.jpg);
     //border-bottom:1px solid #ccc;
     .sys{
         font-size: 20px;

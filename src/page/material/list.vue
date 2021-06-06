@@ -30,14 +30,14 @@
             width="55">
             </el-table-column>
             <el-table-column
-            label="客户名称"
-            width="100">
+            label="名称"
+            width="180">
             <template slot-scope="scope">
                 <span style="margin-left: 10px">{{ scope.row.name }}</span>
             </template>
             </el-table-column>
             <el-table-column
-            label="行业"
+            label="全部状态"
             width="100">
             <template slot-scope="scope">
                 <span style="margin-left: 10px">{{ scope.row.status }}</span>
@@ -45,7 +45,7 @@
             </el-table-column>
             <!--  -->
              <el-table-column
-                label="地区"
+                label="账号"
                 width="180">
                 <template slot-scope="scope">
                     <span style="margin-left: 10px">{{ scope.row.account }}</span>
@@ -53,43 +53,30 @@
             </el-table-column>
             <!--  -->
              <el-table-column
-                label="公司名称"
-                width="100">
+                label="角色"
+                width="180">
                 <template slot-scope="scope">
                     <span style="margin-left: 10px">{{ scope.row.role }}</span>
                 </template>
             </el-table-column>
             <!-- 121 -->
              <el-table-column
-                label="姓名"
-                width="100">
-                <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.name }}</span>
-                </template>
-            </el-table-column>
-             <el-table-column
-                label="电话"
+                label="创建时间"
                 width="180">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.num }}</span>
-                </template>
-            </el-table-column>
-             <el-table-column
-                label="职务"
-                width="180">
-                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
                     <span style="margin-left: 10px">{{ scope.row.date }}</span>
                 </template>
             </el-table-column>
             <!-- 23 -->
              <el-table-column
-                label="全部团队"
-                width="100">
+                label="禁用/启用"
+                width="180">
                 <template slot-scope="scope">
                     <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
             </template>
             </el-table-column>
-            <el-table-column label="操作" width="180">
+            <el-table-column label="操作">
             <template slot-scope="scope">
                 <el-button
                 size="mini"
@@ -117,8 +104,7 @@
           status:'正常',
           account:'li@moviebook.cn',
           role:'销售负责人',
-          isDisable:'是',
-          num:'15526080904'
+          isDisable:'是'
         }, {
           date: '2016-05-04',
           name: '王小虎',
@@ -126,8 +112,7 @@
           status:'正常',
           account:'1@moviebook.cn',
           role:'销售负责人',
-           isDisable:'是',
-           num:'15526080904'
+           isDisable:'是'
         }, {
           date: '2016-05-01',
           name: '王小虎',
@@ -135,8 +120,7 @@
           status:'正常',
           account:'11@moviebook.cn',
           role:'销售负责人',
-           isDisable:'是',
-           num:'15526080904'
+           isDisable:'是'
         }, {
           date: '2016-05-03',
           name: '王小虎',
@@ -144,8 +128,7 @@
           status:'正常',
           account:'119moviebook.cn',
           role:'销售负责人',
-          isDisable:'是',
-          num:'15526080904'
+          isDisable:'是'
         }],
         options: [{
           value: '选项1',
@@ -174,7 +157,7 @@
         console.log(index, row);
       },
       handleAdd(){
-          this.$router.push({path: '/customeradd'})
+          this.$router.push({path: '/materialadd'})
       }
     }
   }

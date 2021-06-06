@@ -1,10 +1,122 @@
 <template>
-    <div>曝光管理</div>
+    <div class="baoz">
+        <div class="title">曝光设置</div>
+        <div class="bao">
+             <el-select v-model="value" placeholder="请选择">
+                <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+            <el-select v-model="value" placeholder="请选择">
+                <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+        </div>
+        <div class="bao">
+             <el-select v-model="value" placeholder="请选择">
+                <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+            <el-select v-model="value" placeholder="请选择">
+                <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+        </div>
+        <div class="bao">
+             <el-select v-model="value" placeholder="请选择">
+                <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+            <el-select v-model="value" placeholder="请选择">
+                <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+        </div>
+        <div class="bao">
+             <el-select v-model="value" placeholder="请选择">
+                <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+            <el-select v-model="value" placeholder="请选择">
+                <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+        </div>
+    </div>
 </template>
 <script>
 export default {
     setup() {
         
     },
+    data:function(){
+        return{
+            options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
+        }
+    }
 }
 </script>
+<style scoped lang="less">
+.baoz{
+width: 100%;
+    .title{
+        width: 100px;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .bao{
+        margin-left: 20px;
+        width: 400px;
+        margin-bottom: 10px;
+    }
+}
+</style>
