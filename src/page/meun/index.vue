@@ -5,7 +5,7 @@
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
-    background-color="#545c64"
+    background-color="#a9c9e3"
     text-color="#fff"
     active-text-color="#ffd04b">
     <!-- <el-submenu index="1" @click="handleGo(index)">

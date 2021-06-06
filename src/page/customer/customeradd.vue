@@ -5,7 +5,7 @@
             <div class="info-text">
                 <span>客户名称</span>
                 <div>
-                    <el-input v-model="input" placeholder="请输入内容"></el-input>
+                    <el-input v-model="input" placeholder="请输入客户名称"></el-input>
                 </div>
             </div>
             <!--  -->
@@ -13,7 +13,7 @@
                 <span>归属团队</span>
                 <div>
                      <div>
-                     <el-select v-model="value" placeholder="选择团队">
+                     <el-select v-model="value" placeholder="请选择归属团队">
                         <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -21,7 +21,7 @@
                         :value="item.value">
                         </el-option>
                     </el-select>
-                    <el-select v-model="value" placeholder="选择客户">
+                    <el-select v-model="value" placeholder="请选择客户">
                         <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -36,17 +36,17 @@
         <div class="user-info">
             <div class="info-input"><p>公司资料</p><div class="line"></div></div>
             <div class="info-text">
-                <span>公司名称</span>
+                <span>名称</span>
                 <div>
-                    <el-input v-model="input" placeholder="请输入内容"></el-input>
+                    <el-input v-model="input" placeholder="请输入公司名称"></el-input>
                 </div>
             </div>
             <!--  -->
              <div class="info-text">
-                <span>公司行业</span>
+                <span>所属行业</span>
                 <div>
                      <div>
-                     <el-select v-model="value" placeholder="选择团队">
+                     <el-select v-model="value" placeholder="选择公司所属行业">
                         <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -58,10 +58,10 @@
                 </div>
             </div>
             <div class="info-text">
-                <span>公司地址</span>
+                <span>地区</span>
                 <div>
                      <div>
-                     <el-select v-model="value" placeholder="选择团队">
+                     <el-select v-model="value" placeholder="省">
                         <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -76,7 +76,7 @@
                 <span></span>
                 <div>
                      <div>
-                     <el-select v-model="value" placeholder="选择团队">
+                     <el-select v-model="value" placeholder="市">
                         <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -91,7 +91,7 @@
                 <span></span>
                 <div>
                      <div>
-                     <el-select v-model="value" placeholder="选择团队">
+                     <el-select v-model="value" placeholder="区">
                         <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -106,21 +106,21 @@
         <div class="user-info">
             <div class="info-input"><p>客户资料</p><div class="line"></div></div>
             <div class="info-text">
-                <span>客户名称</span>
+                <span>名称</span>
                 <div>
-                    <el-input v-model="input" placeholder="请输入内容"></el-input>
+                    <el-input v-model="input" placeholder="请输入客户名称"></el-input>
                 </div>
             </div>
             <div class="info-text">
                 <span>电话</span>
                 <div>
-                    <el-input v-model="input" placeholder="请输入内容"></el-input>
+                    <el-input v-model="input" placeholder="请输入客户电话"></el-input>
                 </div>
             </div>
               <div class="info-text">
                 <span>职务</span>
                 <div>
-                    <el-input v-model="input" placeholder="请输入内容"></el-input>
+                    <el-input v-model="input" placeholder="请输入客户职务"></el-input>
                 </div>
             </div>
         </div>
@@ -175,13 +175,15 @@ export default {
                 text-align: left; 
                 line-height: 40px;
                 margin: 0 10px 10px 10px;
+                color: #a9c9e3;
+                font-weight: 600;
             }
             
             .line{
                 height: 1px;
-                width: 80%;
-                background: #ccc;
+                width: 93%;
                 margin-top: 20px;
+                background: rgb(169, 201, 227);
             }
         }
         .info-text{

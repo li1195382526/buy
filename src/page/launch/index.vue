@@ -27,11 +27,11 @@
             style="width: 100%">
              <el-table-column
             type="selection"
-            width="55">
+            width="40">
             </el-table-column>
             <el-table-column
             label="投放计划"
-            width="100">
+            width="150">
             <template slot-scope="scope">
                 <span style="margin-left: 10px">{{ scope.row.name }}</span>
             </template>
@@ -45,67 +45,67 @@
             </el-table-column>
             <!--  -->
              <el-table-column
-                label="曝光状态"
-                width="100">
+                label="曝光时长"
+                width="50">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.account }}</span>
+                    <span style="margin-left: 10px">{{ scope.row.exposure }}</span>
                 </template>
             </el-table-column>
             <!--  -->
              <el-table-column
-                label="归属平台"
-                width="100">
+                label="投放策略"
+                width="80">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.role }}</span>
+                    <span style="margin-left: 10px">{{ scope.row.way }}</span>
                 </template>
             </el-table-column>
             <!-- 121 -->
              <el-table-column
-                label="物料"
+                label="广告位数量"
                 width="100">
                 <template slot-scope="scope">
-                    <i class="el-icon-time"></i>
-                    <span style="margin-left: 10px">{{ scope.row.date }}</span>
+                    <span style="margin-left: 10px">{{ scope.row.nums }}</span>
                 </template>
             </el-table-column>
             <!-- 23 -->
              <el-table-column
-                label="剧集"
-                width="100">
+                label="定位时间"
+                width="180">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                     <i class="el-icon-time"></i>
+                    <span style="margin-left: 10px">{{ scope.row.site }}</span>
             </template>
             </el-table-column>
              <!-- 23 -->
              <el-table-column
-                label="剧集"
+                label="团队"
                 width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span style="margin-left: 10px">{{ scope.row.team }}</span>
             </template>
             </el-table-column>
              <!-- 23 -->
              <el-table-column
-                label="点位时间"
+                label="客户"
                 width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span style="margin-left: 10px">{{ scope.row.customer }}</span>
             </template>
             </el-table-column>
              <!-- 23 -->
              <el-table-column
-                label="设备终端"
+                label="平台"
                 width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span style="margin-left: 10px">{{ scope.row.platform }}</span>
             </template>
             </el-table-column>
                <!-- 23 -->
              <el-table-column
-                label="创建时间"
-                width="120">
+                label="终端"
+                width="90">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span style="margin-left: 10px">{{ scope.row.terminal }}</span>
             </template>
             </el-table-column>
             <el-table-column label="操作">
@@ -130,35 +130,133 @@
     data() {
       return {
         tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-          status:'正常',
-          account:'li@moviebook.cn',
+          name: '听见广播-一刻英语',
+          exposure: '5s',
+          way: '定投',
+          status:'投放完成',
+          nums: '7021个',
+          site:'20200115-20210506',
+          team:'影谱团队',
+          customer:'听见广播',
+          platform:'影谱内侧',
+          terminal:'OTT',
           role:'销售负责人',
           isDisable:'是'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄',
-          status:'正常',
-          account:'1@moviebook.cn',
+        },{
+          name: '投放计划点位测试',
+          exposure: '--',
+          way: '通投',
+          status:'投放进行中',
+          nums: '6部剧 193集 7021个',
+          site:'20210115-20210116',
+          team:'影谱团队',
+          customer:'点位测试',
+          platform:'影谱内侧',
+          terminal:'IPDA',
           role:'销售负责人',
-           isDisable:'是'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄',
-          status:'正常',
-          account:'11@moviebook.cn',
+          isDisable:'是'
+        },{
+          name: '听见广播-少儿动漫',
+          exposure: '3s',
+          way: '词投',
+          status:'投放进行中',
+          nums: '3部剧 90集 900个',
+          site:'20200115-20210506',
+          team:'影谱团队',
+          customer:'听见广播',
+          platform:'影谱内侧',
+          terminal:'PHONE',
           role:'销售负责人',
-           isDisable:'是'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄',
-          status:'正常',
-          account:'119moviebook.cn',
+          isDisable:'是'
+        },{
+          name: '芒果tv-快乐大本营',
+          exposure: '5s',
+          way: '定投',
+          status:'投放完成',
+          nums: '1部剧 30集 787个',
+          site:'20200115-20210506',
+          team:'芒果tv',
+          customer:'芒果tv',
+          platform:'影谱内侧',
+          terminal:'IPDA',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '腾讯视频-成人动漫',
+          exposure: '3s',
+          way: '通投',
+          status:'投放进行中',
+          nums: '15部剧 456集 4021个',
+          site:'20200320-20210506',
+          team:'腾讯视频',
+          customer:'腾讯视频',
+          platform:'影谱内侧',
+          terminal:'PHONRE',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '暴风影音-电影综合',
+          exposure: '5s',
+          way: '通投',
+          status:'投放完成',
+          nums: '60部剧 60集 300个',
+          site:'20200115-20201030',
+          team:'暴风影音',
+          customer:'暴风影音',
+          platform:'影谱内侧',
+          terminal:'PHONRE',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '暴风影音-电视剧',
+          exposure: '5s',
+          way: '定投',
+          status:'投放进行中',
+          nums: '50部剧 3000集 11021个',
+          site:'20191010-20210604',
+          team:'暴风影音',
+          customer:'暴风影音',
+          platform:'影谱内侧',
+          terminal:'PHONRE',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '芒果tv-电视剧',
+          exposure: '5s',
+          way: '定投',
+          status:'投放完成',
+          nums: '60部剧 4500集 12018',
+          site:'20191010-20210604',
+          team:'芒果tv',
+          customer:'芒果tv',
+          platform:'影谱内侧',
+          terminal:'PHONE',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '听见广播-火花思维',
+          exposure: '5s',
+          way: '定投',
+          status:'投放完成',
+          nums: '10000个',
+          site:'20200115-20210506',
+          team:'听见广播',
+          customer:'听见广播',
+          platform:'影谱内侧',
+          terminal:'OTT',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '听见广播-贝因美',
+          exposure: '5s',
+          way: '定投',
+          status:'投放完成',
+          nums: '9000个',
+          site:'20200115-20210506',
+          team:'听见广播',
+          customer:'听见广播',
+          platform:'影谱内侧',
+          terminal:'OTT',
           role:'销售负责人',
           isDisable:'是'
         }],

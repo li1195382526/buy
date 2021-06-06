@@ -120,10 +120,18 @@
                   <el-checkbox label="webp"></el-checkbox>
             </div>
         </div>
+        <div>
+             <el-button type="primary">保存</el-button>
+        </div>
     </el-tab-pane>
     <el-tab-pane label="芒果TV" name="second">芒果TV</el-tab-pane>
     <el-tab-pane label="华数" name="third">华数</el-tab-pane>
     <el-tab-pane label="影谱演示" name="fourth">影谱演示</el-tab-pane>
+    <el-tab-pane label="爱奇艺" name="fourth">影谱演示</el-tab-pane>
+    <el-tab-pane label="抖音app" name="fourth">影谱演示</el-tab-pane>
+    <el-tab-pane label="暴风影音" name="fourth">影谱演示</el-tab-pane>
+    <el-tab-pane label="腾讯视频" name="fourth">影谱演示</el-tab-pane>
+    <el-tab-pane label="优酷视频" name="fourth">影谱演示</el-tab-pane>
   </el-tabs>
 </template>
 <script>

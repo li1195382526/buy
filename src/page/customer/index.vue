@@ -33,60 +33,62 @@
             label="客户名称"
             width="100">
             <template slot-scope="scope">
-                <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                <span>{{ scope.row.customer }}</span>
             </template>
             </el-table-column>
             <el-table-column
             label="行业"
             width="100">
             <template slot-scope="scope">
-                <span style="margin-left: 10px">{{ scope.row.status }}</span>
+                <span>{{ scope.row.industry }}</span>
             </template>
             </el-table-column>
-            <!--  -->
+            <!-- 地区 -->
              <el-table-column
                 label="地区"
                 width="180">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.account }}</span>
+                    <span>{{ scope.row.area }}</span>
                 </template>
             </el-table-column>
-            <!--  -->
+            <!--公司名称  -->
              <el-table-column
                 label="公司名称"
-                width="100">
+                width="220">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.role }}</span>
+                    <span class="codestyle" :title="scope.row.company">{{ scope.row.company }}</span>
                 </template>
             </el-table-column>
-            <!-- 121 -->
+            <!-- 姓名 -->
              <el-table-column
                 label="姓名"
                 width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                    <span>{{ scope.row.name }}</span>
                 </template>
             </el-table-column>
+            <!-- 电话 -->
              <el-table-column
                 label="电话"
                 width="180">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.num }}</span>
+                    <span>{{ scope.row.phone }}</span>
                 </template>
             </el-table-column>
+            <!-- 职务 -->
              <el-table-column
                 label="职务"
-                width="180">
-                <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.date }}</span>
-                </template>
-            </el-table-column>
-            <!-- 23 -->
-             <el-table-column
-                label="全部团队"
                 width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span>{{ scope.row.duties }}</span>
+                </template>
+            </el-table-column>
+            <!-- 归属团队 -->
+             <el-table-column
+                label="全部团队"
+                width="120">
+                <template slot-scope="scope">
+                    <span>{{ scope.row.team }}</span>
             </template>
             </el-table-column>
             <el-table-column label="操作" width="180">
@@ -101,6 +103,13 @@
             </template>
             </el-table-column>
         </el-table>
+         <div class="page">
+            <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="1000">
+            </el-pagination>
+        </div>
     </div>
 </div>
  
@@ -111,41 +120,105 @@
     data() {
       return {
         tableData: [{
+          customer:'听见广播',
+          industry:'广告传媒',
+          area: '中国 北京',
+          company: '北京中广创思文化传媒有限公司',
           date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-          status:'正常',
-          account:'li@moviebook.cn',
-          role:'销售负责人',
-          isDisable:'是',
-          num:'15526080904'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄',
-          status:'正常',
-          account:'1@moviebook.cn',
-          role:'销售负责人',
-           isDisable:'是',
-           num:'15526080904'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄',
-          status:'正常',
-          account:'11@moviebook.cn',
-          role:'销售负责人',
-           isDisable:'是',
-           num:'15526080904'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄',
-          status:'正常',
-          account:'119moviebook.cn',
-          role:'销售负责人',
-          isDisable:'是',
-          num:'15526080904'
+          name: '听见',
+          phone: '13812345678',
+          duties: '销售总监',
+          team: '康佳平台'
+        },{
+          customer:'宝马客户',
+          industry:'广告传媒',
+          area: '中国 北京',
+          company: '北京宝马文媒',
+          date: '2016-05-02',
+          name: '宝马公司',
+          phone: '13812445779',
+          duties: '宣传大使',
+          team: '影谱销售'
+        },{
+          customer:'rq演示客户',
+          industry:'广告传媒',
+          area: '中国 北京 朝阳',
+          company: 'rq演示公司',
+          date: '2016-05-02',
+          name: 'rq',
+          phone: '118612345678',
+          duties: 'test',
+          team: '影谱内部测试'
+        },{
+          customer:'智能投放客户',
+          industry:'广告传媒',
+          area: '中国 北京 海淀',
+          company: '测试演示',
+          date: '2016-05-02',
+          name: '测试演示',
+          phone: '13579246810',
+          duties: 'advertising',
+          team: '影谱内部测试'
+        },{
+          customer:'芒果tv',
+          industry:'广告传媒',
+          area: '中国 湖南 长沙',
+          company: '湖南快乐阳光互动娱乐有限公司',
+          date: '2016-05-02',
+          name: '金鹰网',
+          phone: '13812345678',
+          duties: '销售',
+          team: '芒果平台'
+        },{
+          customer:'暴风影音',
+          industry:'广告传媒',
+          area: '中国 北京',
+          company: '北京暴风科技有限公司',
+          date: '2016-05-02',
+          name: '暴风影音',
+          phone: '17674336281',
+          duties: '销售总监',
+          team: '暴风平台'
+        },{
+          customer:'至美广告',
+          industry:'纸媒',
+          area: '中国 四川 成都',
+          company: '成都至美广告有限公司',
+          date: '2016-05-02',
+          name: '成都至美',
+          phone: '13822463475',
+          duties: '宣传总监',
+          team: '影谱销售'
+        },{
+          customer:'北新广告',
+          industry:'纸媒',
+          area: '中国 北京',
+          company: '北京北新广告有限公司',
+          date: '2016-05-02',
+          name: '北新传媒',
+          phone: '17736021897',
+          duties: '宣传总监',
+          team: '影谱销售'
+        },{
+          customer:'爱奇艺',
+          industry:'广告传媒',
+          area: '中国 北京',
+          company: '北京爱奇艺科技有限公司',
+          date: '2016-05-02',
+          name: 'iQIYI',
+          phone: '13673567789',
+          duties: '销售总监',
+          team: '爱奇艺平台'
+        },{
+          customer:'抖音',
+          industry:'广告传媒',
+          area: '中国 北京',
+          company: '北京字节跳动科技有限公司',
+          date: '2016-05-02',
+          name: '抖音app',
+          phone: '17789012345',
+          duties: '销售总监',
+          team: '字节跳动平台'
         }],
         options: [{
           value: '选项1',
@@ -193,6 +266,15 @@
     }
     .list-table{
         margin-left: 10px;
+        .codestyle{
+            // width: 80px;
+            // height: 20px;
+            // overflow: hidden;
+            // display: inline-block;
+        }
+    }
+    .page{
+        margin-top: 10px;
     }
 }
 </style>

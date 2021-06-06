@@ -2,7 +2,7 @@
 <div class="list">
     <div class="list-btn">
         <div>
-            <el-select v-model="value" placeholder="请选择部门">
+            <el-select v-model="value" placeholder="请选择角色">
             <el-option
             v-for="item in options"
             :key="item.value"
@@ -31,7 +31,7 @@
             </el-table-column>
             <el-table-column
             label="名称"
-            width="180">
+            width="100">
             <template slot-scope="scope">
                 <span style="margin-left: 10px">{{ scope.row.name }}</span>
             </template>
@@ -46,7 +46,7 @@
             <!--  -->
              <el-table-column
                 label="账号"
-                width="180">
+                width="220">
                 <template slot-scope="scope">
                     <span style="margin-left: 10px">{{ scope.row.account }}</span>
                 </template>
@@ -88,6 +88,14 @@
             </template>
             </el-table-column>
         </el-table>
+        <div class="page">
+            <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="1000">
+            </el-pagination>
+        </div>
+        
     </div>
 </div>
  
@@ -98,38 +106,93 @@
     data() {
       return {
         tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
+          date: '2020-05-02',
+          name: '王小龙',
+          address: '北京市朝阳区',
           status:'正常',
-          account:'li@moviebook.cn',
+          account:'wangxiaolong@moviebook.cn',
           role:'销售负责人',
-          isDisable:'是'
+          isDisable:'否'
         }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄',
+          date: '2020-01-04',
+          name: '马思玉',
+          address: '北京市海淀区',
           status:'正常',
-          account:'1@moviebook.cn',
-          role:'销售负责人',
-           isDisable:'是'
+          account:'masiyu@moviebook.cn',
+          role:'超级管理员',
+           isDisable:'否'
         }, {
-          date: '2016-05-01',
-          name: '王小虎',
+          date: '2021-04-01',
+          name: '辛路路',
           address: '上海市普陀区金沙江路 1519 弄',
-          status:'正常',
-          account:'11@moviebook.cn',
-          role:'销售负责人',
+          status:'异常',
+          account:'xinlulu@moviebook.cn',
+          role:'调试负责人',
            isDisable:'是'
         }, {
-          date: '2016-05-03',
-          name: '王小虎',
+          date: '2020-08-13',
+          name: '李美丽',
           address: '上海市普陀区金沙江路 1516 弄',
           status:'正常',
-          account:'119moviebook.cn',
+          account:'limeili@moviebook.cn',
           role:'销售负责人',
+          isDisable:'否'
+        },
+         {
+          date: '2021-03-01',
+          name: '付莹',
+          address: '上海市普陀区金沙江路 1516 弄',
+          status:'正常',
+          account:'fuying@moviebook.cn',
+          role:'地方',
+          isDisable:'否'
+        },
+         {
+          date: '2020-03-01',
+          name: '张亚莉',
+          address: '上海市普陀区金沙江路 1516 弄',
+          status:'正常',
+          account:'zhangyali@moviebook.cn',
+          role:'超级管理员',
+          isDisable:'否'
+        },
+         {
+          date: '2020-09-20',
+          name: '孙建飞',
+          address: '上海市普陀区金沙江路 1516 弄',
+          status:'正常',
+          account:'sunjianfei@moviebook.cn',
+          role:'销售负责人',
+          isDisable:'否'
+        },
+         {
+          date: '2020-01-15',
+          name: '魏玉超',
+          address: '上海市普陀区金沙江路 1516 弄',
+          status:'正常',
+          account:'weiyuchao@moviebook.cn',
+          role:'超级管理员',
+          isDisable:'否'
+        },
+         {
+          date: '2021-03-01',
+          name: '邓钦文',
+          address: '上海市普陀区金沙江路 1516 弄',
+          status:'正常',
+          account:'dengqinwen@moviebook.cn',
+          role:'地方',
           isDisable:'是'
-        }],
+        },
+         {
+          date: '2021-03-01',
+          name: '刘伟',
+          address: '上海市普陀区金沙江路 1516 弄',
+          status:'正常',
+          account:'liuwei@moviebook.cn',
+          role:'超级管理员',
+          isDisable:'否'
+        }
+        ],
         options: [{
           value: '选项1',
           label: '黄金糕'
@@ -176,6 +239,11 @@
     }
     .list-table{
         margin-left: 10px;
+    }
+    .page{
+        width: 100%;
+       //display: flex;
+        margin-top: 10px;
     }
 }
 </style>

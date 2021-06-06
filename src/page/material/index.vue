@@ -94,6 +94,9 @@
                 </div>
             </div>
         </div>
+        <div class="save-btn">
+            <el-button type="primary">保存</el-button>
+        </div>
     </div>
 </template>
 <script>
@@ -130,6 +133,9 @@ export default {
 <style scoped lang="less">
 .user{
     width: 100%;
+    .save-btn{
+        width: 200px;
+    }
     .user-info{
         width: 100%;
         margin: auto;
@@ -141,13 +147,15 @@ export default {
                 text-align: left; 
                 line-height: 40px;
                 margin: 0 10px 10px 10px;
+               color: #a9c9e3;
+                font-weight: 600;
             }
             
             .line{
-                height: 1px;
-                width: 80%;
-                background: #ccc;
+                  height: 1px;
+                width: 93%;
                 margin-top: 20px;
+                background: rgb(169, 201, 227);
             }
         }
         .info-text{

@@ -30,50 +30,65 @@
             width="55">
             </el-table-column>
             <el-table-column
-            label="名称"
+            label="物料名称"
             width="180">
             <template slot-scope="scope">
-                <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                <span>{{ scope.row.mname }}</span>
             </template>
             </el-table-column>
             <el-table-column
-            label="全部状态"
+            label="图片预览"
             width="100">
             <template slot-scope="scope">
-                <span style="margin-left: 10px">{{ scope.row.status }}</span>
+                <span class="slot-spen">{{ scope.row.pview }}</span>
             </template>
             </el-table-column>
-            <!--  -->
+            <!--  审核状态-->
              <el-table-column
-                label="账号"
-                width="180">
+                label="审核状态"
+                width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.account }}</span>
+                    <span>{{ scope.row.audit }}</span>
                 </template>
             </el-table-column>
-            <!--  -->
+            <!--  物料分类-->
              <el-table-column
-                label="角色"
-                width="180">
+                label="物料分类"
+                width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.role }}</span>
+                    <span>{{ scope.row.classify }}</span>
                 </template>
             </el-table-column>
-            <!-- 121 -->
+            <!-- 物料类型 -->
              <el-table-column
-                label="创建时间"
-                width="180">
+                label="物料类型"
+                width="100">
                 <template slot-scope="scope">
-                    <i class="el-icon-time"></i>
-                    <span style="margin-left: 10px">{{ scope.row.date }}</span>
+                    <span>{{ scope.row.type }}</span>
                 </template>
             </el-table-column>
-            <!-- 23 -->
+            <!-- 客户 -->
+             <el-table-column
+                label="客户"
+                width="100">
+                <template slot-scope="scope">
+                    <span>{{ scope.row.customer }}</span>
+                </template>
+            </el-table-column>
+            <!-- 团队 -->
+             <el-table-column
+                label="团队"
+                width="100">
+                <template slot-scope="scope">
+                    <span>{{ scope.row.team }}</span>
+                </template>
+            </el-table-column>
+            <!-- 操作 -->
              <el-table-column
                 label="禁用/启用"
-                width="180">
+                width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span>{{ scope.row.isDisable }}</span>
             </template>
             </el-table-column>
             <el-table-column label="操作">
@@ -88,6 +103,13 @@
             </template>
             </el-table-column>
         </el-table>
+         <div class="page">
+            <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="1000">
+            </el-pagination>
+        </div>
     </div>
 </div>
  
@@ -98,37 +120,105 @@
     data() {
       return {
         tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-          status:'正常',
-          account:'li@moviebook.cn',
+          mname: '听见',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'3C/IT',
+          type:'易值贴',
           role:'销售负责人',
+          customer:'听见广播',
+          team:'康佳平台',
+          isDisable:'否'
+        },{
+          mname: '宝马客户',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'3C/IT',
+          type:'易值贴',
+          role:'销售负责人',
+          customer:'宝马团队',
+          team:'影谱销售',
+          isDisable:'否'
+        },{
+          mname: 'rq演示',
+          pview: '查看图片',
+          audit: '未通过',
+          classify:'快销品',
+          type:'模版及时贴',
+          role:'销售负责人',
+          customer:'听见广播',
+          team:'影谱内部测试',
           isDisable:'是'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄',
-          status:'正常',
-          account:'1@moviebook.cn',
+        },{
+          mname: '智能投放',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'快销品',
+          type:'模版及时贴',
           role:'销售负责人',
-           isDisable:'是'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄',
-          status:'正常',
-          account:'11@moviebook.cn',
+          customer:'华数植入易',
+          team:'影谱内部测试',
+          isDisable:'否'
+        },{
+          mname: '芒果tv',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'3C/IT',
+          type:'易值贴',
           role:'销售负责人',
-           isDisable:'是'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄',
-          status:'正常',
-          account:'119moviebook.cn',
+          customer:'听见广播',
+          team:'芒果平台',
+          isDisable:'否'
+        },{
+          mname: '暴风影音',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'3C/IT',
+          type:'易值贴',
           role:'销售负责人',
+          customer:'听见广播',
+          team:'暴风平台',
+          isDisable:'否'
+        },{
+          mname: '至美广告',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'快销品',
+          type:'易值贴',
+          role:'销售负责人',
+          customer:'听见广播',
+          team:'影谱内部测试',
           isDisable:'是'
+        },{
+          mname: '北新广告',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'3C/IT',
+          type:'易值贴',
+          role:'销售负责人',
+          customer:'听见广播',
+          team:'影谱内部测试',
+          isDisable:'是'
+        },{
+          mname: '爱奇艺',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'3C/IT',
+          type:'易值贴',
+          role:'销售负责人',
+          customer:'听见广播',
+          team:'爱奇艺平台',
+          isDisable:'否'
+        },{
+          mname: '抖音',
+          pview: '查看图片',
+          audit: '已通过',
+          classify:'3C/IT',
+          type:'易值贴',
+          role:'销售负责人',
+          customer:'听见广播',
+          team:'字节跳动平台',
+          isDisable:'否'
         }],
         options: [{
           value: '选项1',
@@ -176,6 +266,12 @@
     }
     .list-table{
         margin-left: 10px;
+        .slot-spen{
+            color:deepskyblue;
+        }
+    }
+    .page{
+        margin-top:10px;
     }
 }
 </style>

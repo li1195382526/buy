@@ -51,7 +51,7 @@
              <div class="info-text">
                 <span>折扣</span>
                 <div>
-                    <el-input v-model="input" placeholder="请填写合同价格"></el-input>
+                    <el-input v-model="input" placeholder="请填写折扣"></el-input>
                 </div>
             </div>
              <!--  -->
@@ -69,15 +69,18 @@
                        <el-date-picker
                         v-model="value1"
                         type="date"
-                        placeholder="选择日期">
+                        placeholder="选择开始日期">
                         </el-date-picker>
                          <el-date-picker
                         v-model="value1"
                         type="date"
-                        placeholder="选择日期">
+                        placeholder="选择结束日期">
                         </el-date-picker>
                 </div>
             </div>
+        </div>
+         <div class="save-btn">
+            <el-button type="primary">保存</el-button>
         </div>
     </div>
 </template>
@@ -116,6 +119,9 @@ export default {
 <style scoped lang="less">
 .user{
     width: 100%;
+.save-btn{
+width: 300px;
+}
     .user-info{
         width: 100%;
         margin: auto;
@@ -127,13 +133,15 @@ export default {
                 text-align: left; 
                 line-height: 40px;
                 margin: 0 10px 10px 10px;
+                color: #a9c9e3;
+                font-weight: 600;
             }
             
             .line{
-                height: 1px;
-                width: 80%;
-                background: #ccc;
+                  height: 1px;
+                width: 93%;
                 margin-top: 20px;
+                background: rgb(169, 201, 227);
             }
         }
         .info-text{

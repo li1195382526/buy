@@ -31,16 +31,16 @@
             </el-table-column>
             <el-table-column
             label="广告计划"
-            width="100">
+            width="180">
             <template slot-scope="scope">
-                <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                <span>{{ scope.row.name }}</span>
             </template>
             </el-table-column>
             <el-table-column
             label="状态"
             width="100">
             <template slot-scope="scope">
-                <span style="margin-left: 10px">{{ scope.row.status }}</span>
+                <span>{{ scope.row.status }}</span>
             </template>
             </el-table-column>
             <!--  -->
@@ -48,7 +48,7 @@
                 label="预算（元）"
                 width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.account }}</span>
+                    <span>{{ scope.row.account }}</span>
                 </template>
             </el-table-column>
             <!--  -->
@@ -56,7 +56,7 @@
                 label="剩余预算（元/天）"
                 width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.role }}</span>
+                    <span>{{ scope.row.surplus }}</span>
                 </template>
             </el-table-column>
             <!-- 121 -->
@@ -64,7 +64,7 @@
                 label="推广单元（个）"
                 width="100">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.date }}</span>
+                    <span>{{ scope.row.unit }}</span>
                 </template>
             </el-table-column>
             <!-- 23 -->
@@ -72,7 +72,7 @@
                 label="展现量"
                 width="80">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span>{{ scope.row.show }}</span>
             </template>
             </el-table-column>
             <!--  -->
@@ -80,7 +80,7 @@
                 label="点击量"
                 width="80">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span>{{ scope.row.click }}</span>
             </template>
             </el-table-column>
             <!--  -->
@@ -88,7 +88,7 @@
                 label="消费"
                 width="80">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span>{{ scope.row.consume }}</span>
             </template>
             </el-table-column>
                <!--  -->
@@ -96,7 +96,7 @@
                 label="单价"
                 width="80">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span>{{ scope.row.univalence }}</span>
             </template>
             </el-table-column>
                <!--  -->
@@ -104,7 +104,7 @@
                 label="下载量"
                 width="80">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span>{{ scope.row.download }}</span>
             </template>
             </el-table-column>
               <!--  -->
@@ -112,10 +112,10 @@
                 label="安装量"
                 width="80">
                 <template slot-scope="scope">
-                    <span style="margin-left: 10px">{{ scope.row.isDisable }}</span>
+                    <span>{{ scope.row.install }}</span>
             </template>
             </el-table-column>
-            <el-table-column label="操作">
+            <el-table-column label="操作" width="150">
             <template slot-scope="scope">
                 <el-button
                 size="mini"
@@ -127,6 +127,13 @@
             </template>
             </el-table-column>
         </el-table>
+         <div class="page">
+            <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="1000">
+            </el-pagination>
+        </div>
     </div>
 </div>
  
@@ -137,53 +144,155 @@
     data() {
       return {
         tableData: [{
-          date: '2',
-          name: '王小虎',
+          name: '听见广播-一刻英语',
+          status: '投放完成',
+          surplus:'5000',
+          unit:'0',
+          show:'0',
+          click:'5000',
+          consume:'15000',
+          univalence:'3',
+          download:'1000',
+          install:'999',
           address: '上海市普陀区金沙江路 1518 弄',
-          status:'正常',
-          account:'20',
+          account:'20000',
           role:'销售负责人',
           isDisable:'是'
-        }, {
-          date: '4',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄',
-          status:'正常',
-          account:'222',
-          role:'销售负责人',
-           isDisable:'是'
-        }, {
-          date: '01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄',
-          status:'正常',
-          account:'444',
-          role:'销售负责人',
-           isDisable:'是'
-        }, {
-          date: '16',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄',
-          status:'正常',
-          account:'66',
+        },{
+          name: '听见广播-火花思维',
+          status: '投放完成',
+          surplus:'-10000',
+          unit:'0',
+          show:'0',
+          click:'10000',
+          consume:'40000',
+          univalence:'4',
+          download:'5000',
+          install:'3800',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'30000',
           role:'销售负责人',
           isDisable:'是'
-        }],
-        options: [{
-          value: '选项1',
-          label: '黄金糕'
-        }, {
-          value: '选项2',
-          label: '双皮奶'
-        }, {
-          value: '选项3',
-          label: '蚵仔煎'
-        }, {
-          value: '选项4',
-          label: '龙须面'
-        }, {
-          value: '选项5',
-          label: '北京烤鸭'
+        },{
+          name: '听见广播-贝因美',
+          status: '投放完成',
+          surplus:'1669',
+          unit:'0',
+          show:'0',
+          click:'6666',
+          consume:'23331',
+          univalence:'3.5',
+          download:'0',
+          install:'0',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'25000',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '芒果tv-脉动',
+          status: '投放完成',
+          surplus:'15000',
+          unit:'0',
+          show:'0',
+          click:'5000',
+          consume:'25000',
+          univalence:'5',
+          download:'0',
+          install:'0',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'40000',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '芒果tv-999感冒灵',
+          status: '投放完成',
+          surplus:'5000',
+          unit:'0',
+          show:'0',
+          click:'15000',
+          consume:'3000',
+          univalence:'5',
+          download:'0',
+          install:'0',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'20000',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '暴风影音-boss直聘',
+          status: '投放进行中',
+          surplus:'15000',
+          unit:'0',
+          show:'0',
+          click:'20000',
+          consume:'50000',
+          univalence:'2.5',
+          download:'15000',
+          install:'13000',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'65000',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '暴风影音-美团买菜',
+          status: '投放进行中',
+          surplus:'30000',
+          unit:'0',
+          show:'0',
+          click:'30000',
+          consume:'90000',
+          univalence:'3',
+          download:'27000',
+          install:'23000',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'120000',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '爱奇艺-加多宝',
+          status: '投放完成',
+          surplus:'3750',
+          unit:'0',
+          show:'0',
+          click:'5000',
+          consume:'6250',
+          univalence:'2.5',
+          download:'0',
+          install:'0',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'10000',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '爱奇艺-公牛饮料',
+          status: '投放进行中',
+          surplus:'50000',
+          unit:'0',
+          show:'0',
+          click:'10000',
+          consume:'50000',
+          univalence:'5',
+          download:'0',
+          install:'0',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'100000',
+          role:'销售负责人',
+          isDisable:'是'
+        },{
+          name: '腾讯视频-康师傅绿茶',
+          status: '投放进行中',
+          surplus:'50000',
+          unit:'0',
+          show:'0',
+          click:'30000',
+          consume:'150000',
+          univalence:'5',
+          download:'0',
+          install:'0',
+          address: '上海市普陀区金沙江路 1518 弄',
+          account:'200000',
+          role:'销售负责人',
+          isDisable:'是'
         }],
         value: ''
       }
@@ -212,6 +321,9 @@
     }
     .list-table{
         margin-left: 10px;
+    }
+    .page{
+        margin-top: 10px;
     }
 }
 </style>
